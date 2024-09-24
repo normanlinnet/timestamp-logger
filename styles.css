@@ -1,5 +1,5 @@
 /* 
-The CSS file for styling and responsive design.
+CSS file for styling and responsive design.
 */
 
 body {
@@ -41,25 +41,26 @@ button {
 }
 
 /* Event list styling */
-#event-list, #manage-event-list {
+#event-list {
     list-style-type: none;
     padding: 0;
 }
 
-#event-list li, #manage-event-list li {
+#event-list li {
     background-color: #f9f9f9;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ddd;
+    position: relative;
 }
 
-/* Buttons within the event management list */
-.manage-buttons {
-    display: flex;
-    justify-content: flex-end;
+/* Buttons within the logged event list */
+.event-buttons {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
-.manage-buttons button {
-    margin-left: 10px;
+.event-buttons button {
+    margin-left: 5px;
 }
-
