@@ -1,5 +1,6 @@
 /* 
-Main JavaScript file for handling the timestamp logging functionality, updated to include PWA features and standardized code style.
+Main JavaScript file for handling the timestamp logging functionality,
+updated to remove the real-time date and time display and allow manual input.
 */
 
 // DOM elements
@@ -33,7 +34,7 @@ function displayLoggedEvents() {
   eventList.innerHTML = "";
   loggedEvents.forEach((log, index) => {
     const li = document.createElement("li");
-    li.textContent = `${events[log.eventIndex]} at ${new Date(
+    li.innerHTML = `${events[log.eventIndex]}<br>${new Date(
       log.timestamp
     ).toLocaleString()}`;
 
@@ -72,6 +73,8 @@ function editLoggedEvent(index) {
 
   // Pre-fill the form with existing data
   eventSelect.value = log.eventIndex;
+
+  // Set the event time input to the existing timestamp
   eventTimeInput.value = new Date(log.timestamp).toISOString().slice(0, 16);
 
   // Remove the old log
@@ -104,10 +107,13 @@ eventForm.addEventListener("submit", function (e) {
   // Get selected event index
   const eventIndex = eventSelect.value;
 
-  // Use current time if no time is specified
-  let timestamp = eventTimeInput.value
-    ? new Date(eventTimeInput.value).getTime()
-    : Date.now();
+  // Check if the event time input is specified
+  let timestamp;
+  if (eventTimeInput.value) {
+    timestamp = new Date(eventTimeInput.value).getTime();
+  } else {
+    timestamp = Date.now(); // Use current timestamp if no time is specified
+  }
 
   // Add the new log to the loggedEvents array
   loggedEvents.push({ eventIndex, timestamp });
@@ -127,21 +133,6 @@ manageEventsBtn.addEventListener("click", function () {
   window.location.href = "manage.html";
 });
 
-/**
- * Update the event time input to display the current time and update in real-time.
- */
-function updateEventTime() {
-  const now = new Date();
-  const localISOTime = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
-    .toISOString()
-    .slice(0, 16);
-  eventTimeInput.value = localISOTime;
-}
-
 // Initial setup
 populateEventSelect();
 displayLoggedEvents();
-updateEventTime();
-
-// Update the event time input every second
-setInterval(updateEventTime, 1000);
