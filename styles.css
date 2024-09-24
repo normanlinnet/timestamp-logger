@@ -1,0 +1,65 @@
+/* 
+The CSS file for styling and responsive design.
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Responsive headings */
+h1, h2 {
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Event list styling */
+#event-list, #manage-event-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#event-list li, #manage-event-list li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Buttons within the event management list */
+.manage-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.manage-buttons button {
+    margin-left: 10px;
+}
+

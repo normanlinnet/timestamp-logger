@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    The head section includes meta tags for responsiveness and links to the CSS stylesheet.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Logger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <h1>Timestamp Logger</h1>
+        <!-- Event selection form -->
+        <form id="event-form">
+            <label for="event-select">Select Event:</label>
+            <select id="event-select"></select>
+
+            <label for="event-time">Timestamp:</label>
+            <input type="datetime-local" id="event-time">
+
+            <button type="submit">Log Event</button>
+        </form>
+
+        <!-- Button to navigate to event management page -->
+        <button id="manage-events-btn">Manage Events</button>
+
+        <!-- Section to display logged events -->
+        <h2>Logged Events</h2>
+        <ul id="event-list"></ul>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
+
