@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-    Head section with meta tags and links to the CSS stylesheet.
-    -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timestamp Logger</title>
-    <link rel="stylesheet" href="styles.css">
+  <!--
+  Head section with meta tags optimized for mobile and PWA functionality.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timestamp Logger</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <!-- iOS Support -->
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <!-- Main container -->
-    <div class="container">
-        <h1>Timestamp Logger</h1>
-        <!-- Event selection form -->
-        <form id="event-form">
-            <label for="event-select">Select Event:</label>
-            <select id="event-select"></select>
+  <!-- Main container -->
+  <div class="container">
+    <h1>Timestamp Logger</h1>
+    <!-- Event selection form -->
+    <form id="event-form">
+      <label for="event-select">Select Event:</label>
+      <select id="event-select"></select>
 
-            <label for="event-time">Timestamp:</label>
-            <!--
-            The timestamp input now displays the current time and updates in real-time.
-            -->
-            <input type="datetime-local" id="event-time">
+      <label for="event-time">Timestamp:</label>
+      <!--
+      The timestamp input now displays the current time and updates in real-time.
+      -->
+      <input type="datetime-local" id="event-time">
 
-            <button type="submit">Log Event</button>
-        </form>
+      <button type="submit">Log Event</button>
+    </form>
 
-        <!-- Button to navigate to event management page -->
-        <button id="manage-events-btn">Manage Events</button>
+    <!-- Button to navigate to event management page -->
+    <button id="manage-events-btn">Manage Events</button>
 
-        <!-- Section to display logged events -->
-        <h2>Logged Events</h2>
-        <ul id="event-list"></ul>
-    </div>
+    <!-- Section to display logged events -->
+    <h2>Logged Events</h2>
+    <ul id="event-list"></ul>
+  </div>
 
-    <!-- Link to the JavaScript file -->
-    <script src="app.js"></script>
+  <!-- Link to the JavaScript file -->
+  <script src="app.js"></script>
+  <!-- Register the Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+      .then(() => console.log("Service Worker Registered"));
+    }
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* 
-JavaScript file for managing event types (CRUD operations), updated to start with no default events.
+JavaScript file for managing event types (CRUD operations), updated to start with no default events and standardized code style.
 */
 
 // DOM elements

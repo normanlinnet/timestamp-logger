@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-    The head section for the event management page.
-    -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Events</title>
-    <link rel="stylesheet" href="styles.css">
+  <!--
+  Head section for the event management page with PWA meta tags.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <!-- iOS Support -->
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <!-- Main container -->
-    <div class="container">
-        <h1>Manage Events</h1>
-        <!-- Form to add new events -->
-        <form id="new-event-form">
-            <label for="new-event-name">New Event Name:</label>
-            <input type="text" id="new-event-name" required>
-            <button type="submit">Add Event</button>
-        </form>
+  <!-- Main container -->
+  <div class="container">
+    <h1>Manage Events</h1>
+    <!-- Form to add new events -->
+    <form id="new-event-form">
+      <label for="new-event-name">New Event Name:</label>
+      <input type="text" id="new-event-name" required>
+      <button type="submit">Add Event</button>
+    </form>
 
-        <!-- List of existing events with options to edit or delete -->
-        <ul id="manage-event-list"></ul>
+    <!-- List of existing events with options to edit or delete -->
+    <ul id="manage-event-list"></ul>
 
-        <!-- Button to navigate back to the main page -->
-        <button id="back-btn">Back to Logger</button>
-    </div>
+    <!-- Button to navigate back to the main page -->
+    <button id="back-btn">Back to Logger</button>
+  </div>
 
-    <!-- Link to the JavaScript file -->
-    <script src="manage.js"></script>
+  <!-- Link to the JavaScript file -->
+  <script src="manage.js"></script>
 </body>
 </html>
-

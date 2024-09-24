@@ -1,0 +1,15 @@
+{
+  "short_name": "Timestamp Logger",
+  "name": "Timestamp Logger PWA",
+  "icons": [
+    {
+      "src": "icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

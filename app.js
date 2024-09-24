@@ -1,5 +1,5 @@
 /* 
-Main JavaScript file for handling the timestamp logging functionality, updated to include editing and deleting logged events, and real-time updating timestamp.
+Main JavaScript file for handling the timestamp logging functionality, updated to include PWA features and standardized code style.
 */
 
 // DOM elements

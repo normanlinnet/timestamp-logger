@@ -1,66 +1,100 @@
 /* 
-CSS file for styling and responsive design.
+CSS file for styling and responsive design, optimized for mobile-first approach and fixed layout issues.
 */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Container styling */
+/* Mobile-first Container styling */
 .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
+  padding: 20px;
 }
 
 /* Responsive headings */
 h1, h2 {
-    text-align: center;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 /* Form styling */
 form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 label {
-    margin-top: 10px;
+  margin-top: 10px;
+  font-size: 1em;
 }
 
 input, select, button {
-    padding: 10px;
-    margin-top: 5px;
+  padding: 15px;
+  margin-top: 5px;
+  font-size: 1em;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Event list styling */
-#event-list {
-    list-style-type: none;
-    padding: 0;
+#event-list, #manage-event-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-#event-list li {
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    position: relative;
+#event-list li, #manage-event-list li {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  position: relative;
 }
 
-/* Buttons within the logged event list */
-.event-buttons {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+/* Buttons within the event management list */
+.manage-buttons, .event-buttons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.event-buttons button {
-    margin-left: 5px;
+.manage-buttons button, .event-buttons button {
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+/* Adjust button sizes for mobile */
+button, input[type="submit"] {
+  padding: 15px;
+  font-size: 1em;
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 600px) {
+  .container {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  h1, h2 {
+    font-size: 2em;
+  }
+
+  label, input, select, button {
+    font-size: 1.2em;
+  }
+
+  #event-list li, #manage-event-list li {
+    padding: 20px;
+  }
+
+  .manage-buttons button, .event-buttons button {
+    font-size: 1em;
+  }
 }
